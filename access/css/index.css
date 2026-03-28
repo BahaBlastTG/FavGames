@@ -1,0 +1,266 @@
+/* GG fonts */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*=============== GOOGLE FONTS ===============*/  
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+/*========== Colors (Dark Black & Purple Theme) ==========*/
+
+/* Dark black and purple theme */
+--hue: 270;
+
+/* Purple accent tones */
+--first-color: hsl(270, 70%, 60%);
+--first-color-alt: hsl(270, 75%, 50%);
+--first-color-light: hsl(270, 60%, 70%);
+
+/* Light text for dark backgrounds */
+--title-color: hsl(270, 30%, 90%);
+--text-color: hsl(270, 15%, 75%);
+--text-color-light: hsl(270, 10%, 65%);
+
+/* Dark backgrounds */
+--white-color: hsl(0, 0%, 100%);
+--body-color: hsl(270, 20%, 8%);
+--container-color: hsl(270, 25%, 15%);
+
+/* Dark shadow */
+--shadow-color: hsla(270, 30%, 5%, 0.4);
+
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font:"Roboto", sans-serif;
+  --biggest-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1920px) {
+  :root {
+    --biggest-font-size: 4.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1.125rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color .4s;
+}
+
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
+}
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Login */
+/* New login page styles */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(10, 5, 20, 0.92), rgba(40, 20, 60, 0.92)), url('../../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.background__img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
+}
+.main__container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.login-card {
+  width: min(380px, 100%);
+  background: var(--container-color);
+  border-radius: 16px;
+  box-shadow: 0 16px 48px var(--shadow-color);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border: 1px solid hsl(270, 50%, 25%);
+}
+
+.login-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.15rem;
+  color: var(--title-color);
+}
+
+.subheading {
+  color: var(--text-color);
+  margin-bottom: 0.9rem;
+  font-size: 0.9rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.login-form label {
+  font-weight: 600;
+  color: var(--title-color);
+  font-size: 0.85rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid hsl(270, 40%, 25%);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--title-color);
+  background: hsl(270, 25%, 18%);
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.login-form input:focus {
+  border-color: var(--first-color);
+  box-shadow: 0 0 0 3px rgba(200, 100, 255, 0.15);
+}
+
+.forgot-link {
+  font-size: .85rem;
+  color: var(--first-color-light);
+  font-weight: 600;
+  justify-self: end;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover {
+  color: var(--first-color);
+}
+
+.btn {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  margin-top: 0.3rem;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--first-color) 0%, var(--first-color-alt) 100%);
+  color: #fff;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(200, 100, 255, 0.3);
+}
+
+.sign-up {
+  text-align: center;
+  color: var(--text-color-light);
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.sign-up a {
+  color: var(--first-color-light);
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.sign-up a:hover {
+  color: var(--first-color);
+}
+
+@media (max-width: 500px) {
+  .login-card {
+    padding: 1.3rem;
+  }
+
+  .main__container {
+    padding: 0.8rem;
+  }
+
+  .login-card h1 {
+    font-size: 1.5rem;
+  }
+}
+
+

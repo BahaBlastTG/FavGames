@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="access/css/index.css">
 </head>
 <body>
+    <!-- header -->
     <header class="header">
         <div class="left__side__header">
             <div class="logo">
@@ -28,12 +29,13 @@
             </div>
         </div>
     </header>
+    <!-- main content -->
     <div class="main__container container">
         <img src="access/img/background.jpg" alt="" class="background__img">
 
         <section class="intro-card">
             <h1>Welcome to FavGames</h1>
-            <p class="subheading">A cozy place to discover games, manage favorites, and keep playing.</p>
+            <p class="subheading">A cozy place to discover indie games, manage favorites, and keep playing.</p>
             <div class="button-group">
                 <a href="login.html" class="btn btn-primary">Login</a>
                 <a href="sign-in.html" class="btn btn-secondary">Sign Up</a>
@@ -41,65 +43,52 @@
         </section>
 
         <section class="game-list-section">
-            <h2 class="category-label">Newest Games</h2>
-            <div class="game-grid">
-                <article class="game-card" style="background-image: url('access/img/Poster.jpg');">
-                    <div class="game-card-info">
-                        <h3>Ultrakill</h3>
-                        <p>Fast-paced retro shooter with brutal combos.</p>
-                    </div>
-                </article>
-                <article class="game-card" style="background-image: url('access/img/Poster.jpg');">
-                    <div class="game-card-info">
-                        <h3>Ultrakill</h3>
-                        <p>Fast-paced retro shooter with brutal combos.</p>
-                    </div>
-                </article>
-                <article class="game-card" style="background-image: url('access/img/Poster.jpg');">
-                    <div class="game-card-info">
-                        <h3>Ultrakill</h3>
-                        <p>Fast-paced retro shooter with brutal combos.</p>
-                    </div>
-                </article>
-                <article class="game-card" style="background-image: url('access/img/Poster.jpg');">
-                    <div class="game-card-info">
-                        <h3>Ultrakill</h3>
-                        <p>Fast-paced retro shooter with brutal combos.</p>
-                    </div>
-                </article>
+
+            <h2 class="category-label">Game you should ABSOLUTELY PLAY</h2>
+            <div class="game-carousel">
+                <button class="carousel-btn prev" aria-label="Previous games">&#10094;</button>
+                <button class="carousel-btn next" aria-label="Next games">&#10095;</button>
+                <div class="game-grid popular-games"></div>
             </div>
 
             <h2 class="category-label">Most Popular</h2>
-            <div class="game-grid">
-                <article class="game-card" style="background-image: url('access/img/Poster.jpg');">
-                    <div class="game-card-info">
-                        <h3>Ultrakill</h3>
-                        <p>Fast-paced retro shooter with brutal combos.</p>
-                    </div>
-                </article>
-                <article class="game-card" style="background-image: url('access/img/Poster.jpg');">
-                    <div class="game-card-info">
-                        <h3>Ultrakill</h3>
-                        <p>Fast-paced retro shooter with brutal combos.</p>
-                    </div>
-                </article>
-                <article class="game-card" style="background-image: url('access/img/Poster.jpg');">
-                    <div class="game-card-info">
-                        <h3>Ultrakill</h3>
-                        <p>Fast-paced retro shooter with brutal combos.</p>
-                    </div>
-                </article>
-                <article class="game-card" style="background-image: url('access/img/Poster.jpg');">
-                    <div class="game-card-info">
-                        <h3>Ultrakill</h3>
-                        <p>Fast-paced retro shooter with brutal combos.</p>
-                    </div>
-                </article>
+            <div class="game-carousel">
+                <button class="carousel-btn prev" aria-label="Previous games">&#10094;</button>
+                <button class="carousel-btn next" aria-label="Next games">&#10095;</button>
+                <div class="game-grid popular-games"></div>
+            </div>
+
+            <h2 class="category-label">Best Indie Games</h2>
+            <div class="game-carousel">
+                <button class="carousel-btn prev" aria-label="Previous games">&#10094;</button>
+                <button class="carousel-btn next" aria-label="Next games">&#10095;</button>
+                <div class="game-grid indie-games"></div>
+            </div>
+
+            <h2 class="category-label">Game of the Year</h2>
+            <div class="game-carousel">
+                <button class="carousel-btn prev" aria-label="Previous games">&#10094;</button>
+                <button class="carousel-btn next" aria-label="Next games">&#10095;</button>
+                <div class="game-grid goty-games"></div>
+            </div>
+
+            <h2 class="category-label">Top Rated</h2>
+            <div class="game-carousel">
+                <button class="carousel-btn prev" aria-label="Previous games">&#10094;</button>
+                <button class="carousel-btn next" aria-label="Next games">&#10095;</button>
+                <div class="game-grid top-rated-games"></div>
+            </div>
+
+            <h2 class="category-label">Upcoming Releases</h2>
+            <div class="game-carousel">
+                <button class="carousel-btn prev" aria-label="Previous games">&#10094;</button>
+                <button class="carousel-btn next" aria-label="Next games">&#10095;</button>
+                <div class="game-grid upcoming-games"></div>
             </div>
         </section>
     </div>
     <footer class="footer">
-        <p>&copy; 2023 GameHub. All rights reserved.</p>
+        <p>&copy; 2026 FavGames. All rights reserved.</p>
         <nav class="navbar">
             <a href="#" class="footer__link">About</a>
             <a href="#" class="footer__link">Contact</a>
@@ -108,5 +97,7 @@
             <a href="#" class="footer__link">Github Page</a>
         </nav>
     </footer>
+    <script src="index.js"></script>
+    <script src="api.js"></script>
 </body>
 </html>

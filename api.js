@@ -17,6 +17,33 @@ async function fetchGamesByParams(params = {}) {
   return data.results || [];
 }
 
+function normalizeGameName(name) {
+  return name.trim().toLowerCase().replace(/[^a-z0-9]+/g, '');
+}
+
+async function fetchGameByName(name) {
+  const results = await fetchGamesByParams({ search: name, page_size: 5 });
+  if (!results.length) return null;
+
+  const exactMatch = results.find(game => normalizeGameName(game.name) === normalizeGameName(name));
+  return exactMatch || results[0];
+}
+
+async function loadMustPlayGames() {
+  const mustPlayNames = [
+    'Terraria',
+    'Ultrakill',
+    'OneShot',
+    'Hollow Knight',
+    'Dead Cells',
+    'Undertale',
+    'Deltarune'
+  ];
+
+  const games = await Promise.all(mustPlayNames.map(name => fetchGameByName(name)));
+  return games.filter(Boolean);
+}
+
 function renderGames(containerSelector, games) {
   const container = document.querySelector(containerSelector);
   if (!container) return;
@@ -50,8 +77,8 @@ async function loadGames() {
   const formattedNextYear = nextYear.toISOString().split('T')[0];
   const currentYear = today.getFullYear();
 
-  const [newestGames, popularGames, indieGames, gotyGames, topRatedGames, upcomingGames] = await Promise.all([
-    fetchGamesByParams({ ordering: '-released', page_size: 12 }),
+  const [mustPlayGames, popularGames, indieGames, gotyGames, topRatedGames, upcomingGames] = await Promise.all([
+    loadMustPlayGames(),
     fetchGamesByParams({ ordering: '-added', page_size: 12 }),
     fetchGamesByParams({ genres: 'indie', ordering: '-rating', page_size: 12 }),
     fetchGamesByParams({ dates: `${currentYear - 1}-01-01,${currentYear}-12-31`, ordering: '-rating', page_size: 12 }),
@@ -59,7 +86,7 @@ async function loadGames() {
     fetchGamesByParams({ dates: `${formattedToday},${formattedNextYear}`, ordering: '-released', page_size: 12 }),
   ]);
 
-  renderGames('.newest-games', newestGames);
+  renderGames('.must-play-games', mustPlayGames);
   renderGames('.popular-games', popularGames);
   renderGames('.indie-games', indieGames);
   renderGames('.goty-games', gotyGames);
@@ -84,7 +111,7 @@ function bindSearch() {
       }
 
       const results = await fetchGamesByParams({ search: query, page_size: 12 });
-      renderGames('.newest-games', results);
+      renderGames('.popular-games', results);
     }, 350);
   });
 }

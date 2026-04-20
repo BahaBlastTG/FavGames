@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FavGames - Profile</title>
+    <link rel="stylesheet" href="access/css/index.css">
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="left__side__header">
+            <div class="logo">
+                <h1>FavGames</h1>
+                <img src="access/img/Logo.jpg" alt="" class="logo__img">
+            </div>
+            <nav class="navbar">
+                <a href="#" class="nav__link">Home</a>
+                <a href="#" class="nav__link">About</a>
+                <a href="#" class="nav__link">Category</a>
+                <a href="#" class="nav__link">Favourited Games</a>
+            </nav>
+        </div>
+        <div class="right__side__header">
+            <input type="text" id="search-bar" placeholder="Search for a game...">
+            <div class="account">
+                <img src="access/img/ryou yamada avatar.jpg" alt="" class="account__avatar">
+                <h1 id="Username">Ryou</h1>
+            </div>
+        </div>
+    </header>
+    <!-- main content -->
+    <div class="main__container container">
+        <img src="access/img/background.jpg" alt="" class="background__img">
+
+        <section class="profile-section">
+            <div class="profile-grid">
+                <aside class="profile-card">
+                    <div class="profile-avatar-wrap">
+                        <img src="access/img/ryou yamada avatar.jpg" alt="Ryou avatar" class="profile-avatar" id="profile-avatar">
+                    </div>
+                    <h1 id="profile-name">Ryou Yamada</h1>
+                    <p class="profile-username" id="profile-handle">@ryou</p>
+                    <p class="profile-description" id="profile-description">Indie game lover, cozy world explorer, and curator of favorite favorites. Always on the hunt for the next hidden gem.</p>
+
+                    <ul class="profile-meta">
+                        <li><strong>Joined:</strong> <span id="profile-joined">January 2024</span></li>
+                        <li><strong>Email:</strong> <span id="profile-email">ryou@example.com</span></li>
+                        <li><strong>Favorited games:</strong> <span id="profile-favorites-count">12</span></li>
+                    </ul>
+
+                    <div class="profile-actions">
+                        <a href="#" class="btn btn-primary">Edit Profile</a>
+                        <button type="button" id="logout-button" class="btn btn-secondary">Logout</button>
+                    </div>
+                </aside>
+
+                <div class="profile-favorites">
+                    <div class="favorites-header">
+                        <h2>Favorited Games</h2>
+                        <p>These are the games you’ve saved to replay and share.</p>
+                    </div>
+                    <div class="favorites-grid" id="favorites-grid">
+                        <p class="empty-favorites-message">No favorited games yet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2026 FavGames. All rights reserved.</p>
+        <nav class="navbar footer-nav">
+            <a href="#" class="footer__link">About</a>
+            <a href="#" class="footer__link">Contact</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Terms of Service</a>
+            <a href="#" class="footer__link">Github Page</a>
+        </nav>
+    </footer>
+    <script src="auth.js"></script>
+</body>
+</html>

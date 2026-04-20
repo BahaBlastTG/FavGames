@@ -13,7 +13,7 @@
             <h1>Create Account</h1>
             <p class="subheading">Start your journey with FavGames.</p>
 
-            <form action="#" class="login-form">
+            <form action="#" class="login-form" id="signup-form">
                 <label for="name">Username</label>
                 <input type="text" id="name" name="name" placeholder="Enter your username" required>
 
@@ -25,6 +25,7 @@
 
                 <label for="confirm-password">Confirm Password</label>
                 <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                <p class="form-message" id="signup-message"></p>
 
                 <button type="submit" class="btn btn-primary">Sign up</button>
             </form>
@@ -34,5 +35,16 @@
             </p>
         </div>
     </div>
+    <footer class="footer">
+        <p>&copy; 2026 FavGames. All rights reserved.</p>
+        <nav class="navbar footer-nav">
+            <a href="#" class="footer__link">About</a>
+            <a href="#" class="footer__link">Contact</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Terms of Service</a>
+            <a href="#" class="footer__link">Github Page</a>
+        </nav>
+    </footer>
+    <script src="auth.js"></script>
 </body>
 </html>
